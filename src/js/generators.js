@@ -1,5 +1,5 @@
-import Bowman from './Characters/Bowman';
-import Swordsman from '/Characters/Swordsman';
+import Bowman from './/Characters/Bowman';
+import Swordsman from './/Characters/Swordsman';
 import Magician from '/Characters/Magician';
 import Undead from '/Characters/Undead';
 import Daemon from '/Characters/Daemon';
