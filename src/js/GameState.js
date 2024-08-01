@@ -1,6 +1,13 @@
 export default class GameState {
-  static from(object) {
-    // TODO: create object
-    return null;
+  constructor() {
+    this.running = true;
+    this.level = 1;
+    this.turn = 'player';
+    this.selectedCell = null;
+    this.selectedCharacter = '';
+  }
+
+  changeTurn() {
+    this.turn = this.turn === 'player' ? 'computer' : 'player';
   }
 }
