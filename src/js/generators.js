@@ -1,9 +1,9 @@
 import Bowman from './/Characters/Bowman';
 import Swordsman from './/Characters/Swordsman';
-import Magician from '/Characters/Magician';
-import Undead from '/Characters/Undead';
-import Daemon from '/Characters/Daemon';
-import Vampire from '/Characters/Vampire';
+import Magician from './/Characters/Magician';
+import Undead from './Characters/Undead';
+import Daemon from './Characters/Daemon';
+import Vampire from './Characters/Vampire';
 
 /**
  * Формирует экземпляр персонажа из массива allowedTypes со
