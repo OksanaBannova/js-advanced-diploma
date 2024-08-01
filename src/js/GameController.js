@@ -2,11 +2,9 @@ import themes from './themes';
 import cursor from './cursors';
 import generateTeam from './generators';
 import { generatePosition, getPositionsToAttack, getPositionsToMove, createCharacter } from './generators';
-import Team from './Team';
 import PositionedCharacter from './PositionedCharacter';
 import GameState from './GameState';
 import GamePlay from './GamePlay';
-import Bowman from '/characters/Bowman';
 
 export default class GameController {
   
