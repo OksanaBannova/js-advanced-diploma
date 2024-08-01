@@ -1,4 +1,4 @@
-import Bowman from './/characters/Bowman';
+import Bowman from './js/characters/Bowman';
 import Swordsman from './/characters/Swordsman';
 import Magician from './/characters/Magician';
 import Undead from './/characters/Undead';
