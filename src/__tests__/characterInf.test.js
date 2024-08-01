@@ -1,6 +1,6 @@
 import GameController from '../js/GameController';
 import GamePlay from '../js/GamePlay';
-import Bowman from '../js/Characters/Bowman';
+import Bowman from '../js/characters/Bowman';
 
 const gamePlay = new GamePlay();
 const gameController = new GameController(gamePlay, undefined);

@@ -1,5 +1,5 @@
 import { getPositionsToMove } from '../js/generators';
-import Bowman from '../js/Characters/Bowman';
+import Bowman from '../js/characters/Bowman';
 
 test('testing getPositionsToMove', () => {
   const char = {};

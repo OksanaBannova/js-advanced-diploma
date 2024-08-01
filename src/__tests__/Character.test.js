@@ -1,6 +1,6 @@
 import Character from '../js/Character';
-import Bowman from '../js/Characters/Bowman';
-import Swordsman from '../js/Characters/Swordsman';
+import Bowman from '../js/characters/Bowman';
+import Swordsman from '../js/characters/Swordsman';
 
 test('testing Character to throw Error', () => {
   expect(() => {
