@@ -1,8 +1,23 @@
 /**
- * @todo
+ * Определяет уровень жизни
+ *
+ * @param health - числовое представление жизни
+ * @returns string - строковое представление жизни
+ */
+export function calcHealthLevel(health) {
+  if (health < 15) { return 'critical'; }
+
+  if (health < 50) { return 'normal'; }
+
+  return 'high';
+}
+
+/**
+ * Определяет тип плитки
+ *
  * @param index - индекс поля
  * @param boardSize - размер квадратного поля (в длину или ширину)
- * @returns строка - тип ячейки на поле:
+ * @returns string - тип ячейки на поле:
  *
  * top-left
  * top-right
@@ -23,50 +38,28 @@
  * ```
  * */
 export function calcTileType(index, boardSize) {
-  // TODO: ваш код будет тут
-  if (index === 0) {
-    return 'top-left';
-  }
+  const topRow = index < boardSize;
+  const bottomRow = index >= boardSize * (boardSize - 1);
+  const leftColumn = index % boardSize === 0;
+  const rightColumn = index % boardSize === boardSize - 1;
 
-  if (index > 0 && index < 7) {
-    return 'top';
+  switch (true) {
+    case topRow && leftColumn: { return 'top-left'; }
+    case topRow && rightColumn: { return 'top-right'; }
+    case bottomRow && leftColumn: { return 'bottom-left'; }
+    case bottomRow && rightColumn: { return 'bottom-right'; }
+    case topRow && !(leftColumn || rightColumn): { return 'top'; }
+    case bottomRow && !(leftColumn || rightColumn): { return 'bottom'; }
+    case !(topRow || bottomRow) && leftColumn: { return 'left'; }
+    case !(topRow || bottomRow) && rightColumn: { return 'right'; }
+    default: { return 'center'; }
   }
-
-  if (index === 7) {
-    return 'top-right';
-  }
-
-  if (index === 56) {
-    return 'bottom-left';
-  }
-
-  if (index === 63) {
-    return 'bottom-right';
-  }
-
-  if (index > 56 && index < 63) {
-    return 'bottom';
-  }
-
-  if (index % boardSize === 0) {
-    return 'left';
-  }
-
-  if (index % boardSize === 7) {
-    return 'right';
-  }
-
-  return 'center';
 }
 
-export function calcHealthLevel(health) {
-  if (health < 15) {
-    return 'critical';
-  }
-
-  if (health < 50) {
-    return 'normal';
-  }
-
-  return 'high';
-}
+/**
+ * Генерирует случайное целое число (от 0 до {range - 1})
+ *
+ * @param range - диапазон чисел
+ * @returns number - случайное целое число
+ */
+export function randomInt(range) { return Math.floor(Math.random() * range); }
